@@ -4,7 +4,7 @@ using DAL.Interfaces;
 
 namespace DAL.Repos;
 
-internal class UserRepo : IRepository<User>
+internal class UserRepo : IRepository<User>, IUserFeature
 {
     CRSContext db;
     public UserRepo(CRSContext db)
@@ -45,6 +45,9 @@ internal class UserRepo : IRepository<User>
     
     
     // Unique
-    
-    
+    public User Login(int id, string password)
+    {
+        var user = db.Users.SingleOrDefault(u => u.Id == id && u.Password == password);
+        return user;
+    }
 }

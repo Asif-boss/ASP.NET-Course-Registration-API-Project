@@ -65,6 +65,19 @@ namespace APIApp.Controllers
         }
         
         // Unique
+        [HttpPost("login/{id}/{password}")]
+        public IActionResult Login(int id, string password)
+        {
+            var user = service.Login(id, password);
+            if (user != null)
+            {
+                return Ok(new { 
+                    Message = "Login successful"
+                });
+            }
+
+            return Unauthorized(new { Message = "Invalid ID or password." });
+        }
     }
 }
 

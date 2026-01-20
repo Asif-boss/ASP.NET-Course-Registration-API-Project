@@ -46,4 +46,23 @@ public class CourseService
     
     
     // Unique
+    public List<CourseDTO> SearchWithTitle(string title)
+    {
+        return MapperConfig.GetMapper().Map<List<CourseDTO>>(factory.CourseFeature().SearchWithTitle(title));
+    }
+    
+    public List<CourseDTO> SearchWithInstructorId(int instructorId)
+    {
+        return MapperConfig.GetMapper().Map<List<CourseDTO>>(factory.CourseFeature().SearchWithInstructorId(instructorId));
+    }
+
+    public bool IsSeatAvailable(int id)
+    {
+        return factory.CourseFeature().IsSeatAvailable(id);
+    }
+
+    public bool CloseCourse(int id)
+    {
+        return factory.CourseFeature().CloseCourse(id);
+    }
 }

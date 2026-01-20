@@ -65,6 +65,29 @@ namespace APIApp.Controllers
         }
         
         // Unique
+        [HttpGet("title/{title}")]
+        public IActionResult SearchWithTitle(string title)
+        {
+            return Ok(service.SearchWithTitle(title));
+        }
+        
+        [HttpGet("instructor/{id}")]
+        public IActionResult SearchWithInstructorId(int Id)
+        {
+            return Ok(service.SearchWithInstructorId(Id));
+        }
+        
+        [HttpGet("seat/{id}")]
+        public IActionResult IsSeatAvailable(int id)
+        {
+            return Ok(service.IsSeatAvailable(id));
+        }
+        
+        [HttpGet("status/{id}")]
+        public IActionResult CloseCourse(int id)
+        {
+            return Ok(service.CloseCourse(id));
+        }
     }
 }
 

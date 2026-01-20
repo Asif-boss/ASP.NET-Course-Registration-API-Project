@@ -46,4 +46,18 @@ public class CourseRegistrationService
     
     
     // Unique
+    public bool CancelRegistration(int studentId, int courseId)
+    {
+        return factory.CourseRegistrationFeature().CancelRegistration(studentId, courseId);
+    }
+
+    public List<CourseRegistrationDTO> GetStudentRegistrations(int studentId)
+    {
+        return MapperConfig.GetMapper().Map<List<CourseRegistrationDTO>>(factory.CourseRegistrationFeature().GetStudentRegistrations(studentId));
+    }
+
+    public List<CourseRegistrationDTO> GetStudentsList(int courseId)
+    {
+        return MapperConfig.GetMapper().Map<List<CourseRegistrationDTO>>(factory.CourseRegistrationFeature().GetStudentRegistrations(courseId));
+    }
 }

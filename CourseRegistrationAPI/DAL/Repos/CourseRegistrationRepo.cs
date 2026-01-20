@@ -4,7 +4,7 @@ using DAL.Interfaces;
 
 namespace DAL.Repos;
 
-internal class CourseRegistrationRepo : IRepository<CourseRegistration>
+internal class CourseRegistrationRepo : IRepository<CourseRegistration>, ICourseRegistrationFeature
 {
     CRSContext db;
     public CourseRegistrationRepo(CRSContext db)
@@ -45,4 +45,20 @@ internal class CourseRegistrationRepo : IRepository<CourseRegistration>
     
     
     // Unique
+    public bool CancelRegistration(int studentId, int courseId)
+    {
+        var ex = db.CourseRegistrations.SingleOrDefault(c => c.StudentId == studentId && c.CourseId == courseId);
+        db.CourseRegistrations.Remove(ex);
+        return db.SaveChanges() > 0;
+    }
+
+    public List<CourseRegistration> GetStudentRegistrations(int studentId)
+    {
+        return db.CourseRegistrations.Where(c => c.StudentId == studentId).ToList();
+    }
+
+    public List<CourseRegistration> GetStudentsList(int courseId)
+    {
+        return db.CourseRegistrations.Where(c => c.CourseId == courseId).ToList();
+    }
 }

@@ -29,8 +29,15 @@ public class DataAccessFactory
         return new CourseRepo(db);
     }
     
+    public IUserFeature UserFeature() {
+        return new UserRepo(db);
+    }
     
-    // public ICategoryFeature CategoryFeature() {
-    //     return new CategoryRepo(db);
-    // }
+    public ICourseRegistrationFeature CourseRegistrationFeature() {
+        return new CourseRegistrationRepo(db);
+    }
+    
+    public ICourseFeature CourseFeature() {
+        return new CourseRepo(db);
+    }
 }

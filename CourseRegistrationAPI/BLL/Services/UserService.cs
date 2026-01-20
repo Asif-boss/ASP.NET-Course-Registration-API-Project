@@ -51,4 +51,8 @@ public class UserService
     
     
     // Unique
+    public UserDTO Login(int id, string password)
+    {
+        return MapperConfig.GetMapper().Map<UserDTO>(factory.UserFeature().Login(id, password));
+    }
 }

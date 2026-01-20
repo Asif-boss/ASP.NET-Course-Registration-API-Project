@@ -66,6 +66,23 @@ namespace APIApp.Controllers
         }
         
         // Unique
+        [HttpPost("cancel/{studentId}/{courseId}")]
+        public IActionResult CancelRegistration(int studentId, int courseId)
+        {
+            return Ok(service.CancelRegistration(studentId,  courseId));
+        }
+        
+        [HttpGet("student/{id}")]
+        public IActionResult GetStudentRegistrations(int id)
+        {
+            return Ok(service.GetStudentRegistrations(id));
+        }
+        
+        [HttpGet("course/{id}")]
+        public IActionResult GetStudentsList(int id)
+        {
+            return Ok(service.GetStudentRegistrations(id));
+        }
     }
 }
 

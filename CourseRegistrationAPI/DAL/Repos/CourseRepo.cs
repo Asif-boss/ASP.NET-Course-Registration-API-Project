@@ -4,7 +4,7 @@ using DAL.Interfaces;
 
 namespace DAL.Repos;
 
-internal class CourseRepo : IRepository<Course>
+internal class CourseRepo : IRepository<Course>, ICourseFeature
 {
     CRSContext db;
     public CourseRepo(CRSContext db)
@@ -45,4 +45,25 @@ internal class CourseRepo : IRepository<Course>
     
     
     // Unique
+    public List<Course> SearchWithTitle(string title)
+    {
+        return db.Courses.Where(c => c.Title == title).ToList();
+    }
+
+    public List<Course> SearchWithInstructorId(int instructorId)
+    {
+        return db.Courses.Where(c => c.InstructorId == instructorId).ToList();
+    }
+
+    public bool IsSeatAvailable(int id)
+    {
+        var course = db.Courses.SingleOrDefault(c => c.Id == id);
+        if(course.Capacity <= 36 && course!=null) return true;
+        return false;
+    }
+
+    public bool CloseCourse(int id)
+    {
+        return db.Courses.SingleOrDefault(c => c.Id == id).IsOpen;
+    }
 }
