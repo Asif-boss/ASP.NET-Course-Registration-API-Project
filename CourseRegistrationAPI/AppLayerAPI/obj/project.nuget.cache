@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "PRuXYryIGCVJ8isgB0TZemR/ycRud3ewhxnVzYgmbXaVRmbwgUaa5q1vjKUaxF7L43dsYt3iUdP9S/5NZQ+kwQ==",
+  "dgSpecHash": "3QqAjs9Os2E=",
   "success": true,
   "projectFilePath": "/home/theboss/Documents/AIUB/10th Semister/ASP DotNet/Final/ASP.NET-Course-Registration-API-Project/CourseRegistrationAPI/AppLayerAPI/AppLayerAPI.csproj",
   "expectedPackageFiles": [
+    "/home/theboss/.nuget/packages/automapper/14.0.0/automapper.14.0.0.nupkg.sha512",
     "/home/theboss/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/home/theboss/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",
     "/home/theboss/.nuget/packages/bouncycastle.cryptography/2.6.2/bouncycastle.cryptography.2.6.2.nupkg.sha512",

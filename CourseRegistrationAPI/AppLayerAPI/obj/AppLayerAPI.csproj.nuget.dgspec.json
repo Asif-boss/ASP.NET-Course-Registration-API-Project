@@ -27,6 +27,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "/home/theboss/Documents/AIUB/10th Semister/ASP DotNet/Final/ASP.NET-Course-Registration-API-Project/CourseRegistrationAPI/BLL/BLL.csproj": {
+                "projectPath": "/home/theboss/Documents/AIUB/10th Semister/ASP DotNet/Final/ASP.NET-Course-Registration-API-Project/CourseRegistrationAPI/BLL/BLL.csproj"
+              },
               "/home/theboss/Documents/AIUB/10th Semister/ASP DotNet/Final/ASP.NET-Course-Registration-API-Project/CourseRegistrationAPI/DAL/DAL.csproj": {
                 "projectPath": "/home/theboss/Documents/AIUB/10th Semister/ASP DotNet/Final/ASP.NET-Course-Registration-API-Project/CourseRegistrationAPI/DAL/DAL.csproj"
               }
@@ -89,6 +92,70 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.122/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/theboss/Documents/AIUB/10th Semister/ASP DotNet/Final/ASP.NET-Course-Registration-API-Project/CourseRegistrationAPI/BLL/BLL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/theboss/Documents/AIUB/10th Semister/ASP DotNet/Final/ASP.NET-Course-Registration-API-Project/CourseRegistrationAPI/BLL/BLL.csproj",
+        "projectName": "BLL",
+        "projectPath": "/home/theboss/Documents/AIUB/10th Semister/ASP DotNet/Final/ASP.NET-Course-Registration-API-Project/CourseRegistrationAPI/BLL/BLL.csproj",
+        "packagesPath": "/home/theboss/.nuget/packages/",
+        "outputPath": "/home/theboss/Documents/AIUB/10th Semister/ASP DotNet/Final/ASP.NET-Course-Registration-API-Project/CourseRegistrationAPI/BLL/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/theboss/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/lib/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/theboss/Documents/AIUB/10th Semister/ASP DotNet/Final/ASP.NET-Course-Registration-API-Project/CourseRegistrationAPI/DAL/DAL.csproj": {
+                "projectPath": "/home/theboss/Documents/AIUB/10th Semister/ASP DotNet/Final/ASP.NET-Course-Registration-API-Project/CourseRegistrationAPI/DAL/DAL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[14.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

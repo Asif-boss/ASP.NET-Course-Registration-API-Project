@@ -25,7 +25,7 @@ public class DataAccessFactory
     public IRepository<CourseRegistration> CourseRegistrationData() {
         return new CourseRegistrationRepo(db);
     }
-    public IRepository<Course> CourserData() {
+    public IRepository<Course> CourseData() {
         return new CourseRepo(db);
     }
     

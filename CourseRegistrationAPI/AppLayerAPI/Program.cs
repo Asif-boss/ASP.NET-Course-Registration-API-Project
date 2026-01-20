@@ -1,5 +1,6 @@
 using DAL;
 using DAL.EF;
+using BLL.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 
 builder.Services.AddScoped<DataAccessFactory>();
+builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<StudentService>();
+builder.Services.AddScoped<InstructorService>();
+builder.Services.AddScoped<CourseService>();
+builder.Services.AddScoped<CourseRegistrationService>();
 
 var connectionString = builder.Configuration.GetConnectionString("DbConn");
 
@@ -53,6 +59,10 @@ app.MapGet("/weatherforecast", () =>
     })
     .WithName("GetWeatherForecast")
     .WithOpenApi();
+
+// ME
+app.UseAuthorization();
+app.MapControllers();
 
 app.Run();
 
