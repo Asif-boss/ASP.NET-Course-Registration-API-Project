@@ -1,3 +1,5 @@
+using DAL;
+using DAL.EF;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +13,7 @@ builder.Services.AddSwaggerGen();
 // ME
 builder.Services.AddControllers();
 
+builder.Services.AddScoped<DataAccessFactory>();
 
 var connectionString = builder.Configuration.GetConnectionString("DbConn");
 

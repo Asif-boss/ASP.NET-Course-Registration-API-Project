@@ -16,4 +16,10 @@
       <PackageReference Include="MySql.Data" Version="9.5.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Reference Include="Pomelo.EntityFrameworkCore.MySql">
+        <HintPath>..\..\..\..\..\..\..\..\.nuget\packages\pomelo.entityframeworkcore.mysql\9.0.0\lib\net8.0\Pomelo.EntityFrameworkCore.MySql.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>

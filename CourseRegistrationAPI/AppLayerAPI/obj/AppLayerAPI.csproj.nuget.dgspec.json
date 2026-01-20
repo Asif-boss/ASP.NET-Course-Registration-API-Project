@@ -26,7 +26,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/home/theboss/Documents/AIUB/10th Semister/ASP DotNet/Final/ASP.NET-Course-Registration-API-Project/CourseRegistrationAPI/DAL/DAL.csproj": {
+                "projectPath": "/home/theboss/Documents/AIUB/10th Semister/ASP DotNet/Final/ASP.NET-Course-Registration-API-Project/CourseRegistrationAPI/DAL/DAL.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -85,6 +89,80 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.122/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/theboss/Documents/AIUB/10th Semister/ASP DotNet/Final/ASP.NET-Course-Registration-API-Project/CourseRegistrationAPI/DAL/DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/theboss/Documents/AIUB/10th Semister/ASP DotNet/Final/ASP.NET-Course-Registration-API-Project/CourseRegistrationAPI/DAL/DAL.csproj",
+        "projectName": "DAL",
+        "projectPath": "/home/theboss/Documents/AIUB/10th Semister/ASP DotNet/Final/ASP.NET-Course-Registration-API-Project/CourseRegistrationAPI/DAL/DAL.csproj",
+        "packagesPath": "/home/theboss/.nuget/packages/",
+        "outputPath": "/home/theboss/Documents/AIUB/10th Semister/ASP DotNet/Final/ASP.NET-Course-Registration-API-Project/CourseRegistrationAPI/DAL/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/theboss/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/lib/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.12, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[9.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
