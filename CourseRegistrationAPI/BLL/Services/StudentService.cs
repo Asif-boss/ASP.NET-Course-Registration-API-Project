@@ -12,16 +12,16 @@ public class StudentService
     }
     
     // CRUD
-    public StudentDTO Get(int id)
+    public StudentCourseRegistrationDTO Get(int id)
     {
-        return MapperConfig.GetMapper().Map<StudentDTO>(factory.StudentData().Get(id));
+        return MapperConfig.GetMapper().Map<StudentCourseRegistrationDTO>(factory.StudentData().Get(id));
     }
 
-    public List<StudentDTO> Get()
+    public List<StudentCourseRegistrationDTO> Get()
     {
         var data = factory.StudentData().Get();
         var mapper = MapperConfig.GetMapper();
-        var ret = mapper.Map<List<StudentDTO>>(data);
+        var ret = mapper.Map<List<StudentCourseRegistrationDTO>>(data);
         return ret;
     }
 
@@ -43,7 +43,4 @@ public class StudentService
     {
         return factory.StudentData().Delete(id);
     }
-    
-    
-    // Unique
 }

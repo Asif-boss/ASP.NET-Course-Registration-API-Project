@@ -12,16 +12,16 @@ public class CourseService
     }
     
     // CRUD
-    public CourseDTO Get(int id)
+    public CourseRegistrationCourseDTO Get(int id)
     {
-        return MapperConfig.GetMapper().Map<CourseDTO>(factory.CourseData().Get(id));
+        return MapperConfig.GetMapper().Map<CourseRegistrationCourseDTO>(factory.CourseData().Get(id));
     }
 
-    public List<CourseDTO> Get()
+    public List<CourseRegistrationCourseDTO> Get()
     {
         var data = factory.CourseData().Get();
         var mapper = MapperConfig.GetMapper();
-        var ret = mapper.Map<List<CourseDTO>>(data);
+        var ret = mapper.Map<List<CourseRegistrationCourseDTO>>(data);
         return ret;
     }
 

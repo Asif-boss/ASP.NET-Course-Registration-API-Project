@@ -1,6 +1,7 @@
 using DAL.EF;
 using DAL.EF.Models;
 using DAL.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Repos;
 
@@ -15,12 +16,12 @@ internal class StudentRepo : IRepository<Student>
     // CRUD
     public Student Get(int id)
     {
-        return db.Students.Find(id);
+        return db.Students.Include(c=>c.CourseRegistrations).FirstOrDefault(i => i.Id == id);
     }
 
     public List<Student> Get()
     {
-        return db.Students.ToList();
+        return db.Students.Include(c=>c.CourseRegistrations).ToList();
     }
 
     public bool Create(Student entity)

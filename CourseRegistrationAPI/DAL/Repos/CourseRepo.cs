@@ -1,6 +1,7 @@
 using DAL.EF;
 using DAL.EF.Models;
 using DAL.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Repos;
 
@@ -15,12 +16,12 @@ internal class CourseRepo : IRepository<Course>, ICourseFeature
     // CRUD
     public Course Get(int id)
     {
-        return db.Courses.Find(id);
+        return db.Courses.Include(c=>c.CourseRegistrations).FirstOrDefault(i => i.Id == id);
     }
 
     public List<Course> Get()
     {
-        return db.Courses.ToList();
+        return db.Courses.Include(c=>c.CourseRegistrations).ToList();
     }
 
     public bool Create(Course entity)
@@ -58,7 +59,7 @@ internal class CourseRepo : IRepository<Course>, ICourseFeature
     public bool IsSeatAvailable(int id)
     {
         var course = db.Courses.SingleOrDefault(c => c.Id == id);
-        if(course.Capacity <= 36 && course!=null) return true;
+        if(course.EnrolledCount <= 36 && course!=null) return true;
         return false;
     }
 

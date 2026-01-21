@@ -1,6 +1,7 @@
 using DAL.EF;
 using DAL.EF.Models;
 using DAL.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Repos;
 
@@ -15,12 +16,12 @@ internal class InstructorRepo : IRepository<Instructor>
     // CRUD
     public Instructor Get(int id)
     {
-        return db.Instructors.Find(id);
+        return db.Instructors.Include(c=>c.Courses).FirstOrDefault(i => i.Id == id);
     }
 
     public List<Instructor> Get()
     {
-        return db.Instructors.ToList();
+        return db.Instructors.Include(c=>c.Courses).ToList();
     }
 
     public bool Create(Instructor entity)
@@ -42,7 +43,4 @@ internal class InstructorRepo : IRepository<Instructor>
         db.Instructors.Remove(ex);
         return db.SaveChanges() > 0;
     }
-    
-    
-    // Unique
 }

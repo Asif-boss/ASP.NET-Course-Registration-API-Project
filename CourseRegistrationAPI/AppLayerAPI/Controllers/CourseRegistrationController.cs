@@ -10,8 +10,10 @@ namespace APIApp.Controllers
     public class CourseRegistrationController : ControllerBase
     {
         CourseRegistrationService service;
-        public CourseRegistrationController(CourseRegistrationService service) { 
+        CourseService courseService;
+        public CourseRegistrationController(CourseRegistrationService service, CourseService courseService) { 
             this.service = service;
+            this.courseService = courseService;
         }
         
         // CRUD
@@ -29,14 +31,27 @@ namespace APIApp.Controllers
         }
         [HttpPost("create")]
         public IActionResult Create(CourseRegistrationDTO c) { 
-            var res = service.Create(c);
-            if (res == true)
+            var course = courseService.Get(c.CourseId);
+
+            if (course != null)
             {
-                return Ok(res);
+                if (course.EnrolledCount < 39)
+                {
+                    course.EnrolledCount = course.EnrolledCount + 1;
+                    var CourseUpdate = courseService.Update(course);
+                
+                    var res = service.Create(c);
+                    if (res && CourseUpdate)
+                    {
+                        return Ok(res);
+                    }
+                    else {
+                        return BadRequest(res);
+                    }
+                }
             }
-            else {
-                return BadRequest(res);
-            }
+
+            return BadRequest(false);
         }
         [HttpPost("update")]
         public IActionResult Update(CourseRegistrationDTO c)

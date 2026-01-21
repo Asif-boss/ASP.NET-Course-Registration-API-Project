@@ -12,16 +12,16 @@ public class InstructorService
     }
     
     // CRUD
-    public InstructorDTO Get(int id)
+    public InstructorCouresDTO Get(int id)
     {
-        return MapperConfig.GetMapper().Map<InstructorDTO>(factory.InstructorData().Get(id));
+        return MapperConfig.GetMapper().Map<InstructorCouresDTO>(factory.InstructorData().Get(id));
     }
 
-    public List<InstructorDTO> Get()
+    public List<InstructorCouresDTO> Get()
     {
         var data = factory.InstructorData().Get();
         var mapper = MapperConfig.GetMapper();
-        var ret = mapper.Map<List<InstructorDTO>>(data);
+        var ret = mapper.Map<List<InstructorCouresDTO>>(data);
         return ret;
     }
 
@@ -43,7 +43,4 @@ public class InstructorService
     {
         return factory.InstructorData().Delete(id);
     }
-    
-    
-    // Unique
 }
